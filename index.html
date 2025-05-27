@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SNPMB 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right,
+        #94a8d1, /* kiri - biru keunguan */
+        #94a8d1,                         
+        #99b4d1,
+        #99b4d1,                          
+        #9fc0d1,
+        #9fc0d1,
+        #a3cad2,
+        #a7d3d3, /* kanan - biru kehijauan muda */
+        #a8d5d2
+      );
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 20px;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      width: 480px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      background: transparent;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 320px;
+    }
+
+    .title {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    label {
+      color: white;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: none;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .tanggal-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tanggal-group input {
+      width: 30%;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .checkbox input {
+      margin-top: 5px;
+    }
+
+    .checkbox label {
+      font-size: 13px;
+      color: white;
+    }
+
+    button {
+      width: 140px;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      background-color: #377dff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: left;
+    }
+
+    .subtext {
+      font-size: 13px;
+      color: white;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    /* Tambahan untuk halaman hasil */
+    #halaman1, #halaman2 {
+      display: none;
+    }
+
+    #halaman1.active, #halaman2.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Halaman 1 -->
+  <div class="container" id="halaman1" class="active">
+    <div class="logo">
+      <img src="logo.png" alt="Logo SNPMB">
+    </div>
+    <div class="title">PENGUMUMAN HASIL SELEKSI SNBT<br>SNPMB 2025</div>
+
+    <label>Masukkan nomor peserta UTBK-SNBT dan tanggal lahir Anda.</label>
+    <br><br>
+    <label>Nomor peserta UTBK-SNBT</label>
+    <input type="text" placeholder="Masukkan 12-digit nomor peserta UTBK-SNBT Anda">
+<div class="subtext">Masukkan 12-digit nomor peserta UTBK-SNBT Anda</div>
+    
+    <label>Tanggal lahir</label>
+    <div class="tanggal-group">
+      <input type="text" placeholder="01" maxlength="2">
+      <input type="text" placeholder="01" maxlength="2">
+      <input type="text" placeholder="2007" maxlength="4">
+    </div>
+    <div class="subtext">Tanggal (2 digit): 01–31 &nbsp; Bulan (2 digit): 01–12 &nbsp; Tahun (4 digit)</div>
+
+    <div class="checkbox">
+      <input type="checkbox" id="cek">
+      <label for="cek">Dengan ini saya menyatakan bahwa apabila di kemudian hari ditemukan kecurangan yang saya lakukan dalam UTBK-SNBT 2025, maka status penerimaan saya dibatalkan.</label>
+    </div>
+
+    <div class="btn-container">
+      <button onclick="tampilkanHasil()">Lihat Hasil</button>
+    </div>
+  </div>
+
+  <!-- Halaman 2 (hasil) -->
+  <div class="container" id="halaman2">
+    <div class="logo">
+      <img src="1.jpg" alt="Logo SNPMB">
+    </div>
+
+  </div>
+
+  <script>
+    // Tampilkan halaman hasil
+    function tampilkanHasil() {
+      document.getElementById("halaman1").classList.remove("active");
+      document.getElementById("halaman2").classList.add("active");
+    }
+
+    // Tampilkan halaman 1 secara default
+    document.getElementById("halaman1").classList.add("active");
+  </script>
+</body>
+</html>
